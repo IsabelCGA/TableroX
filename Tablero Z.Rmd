@@ -1,0 +1,40 @@
+---
+title: "Tablero beta"
+output: 
+  flexdashboard::flex_dashboard:
+    orientation: columns
+    vertical_layout: fill
+---
+
+```{r setup, include=FALSE}
+library(flexdashboard)
+
+data(cars)
+
+```
+
+Column {data-width=650}
+-----------------------------------------------------------------------
+
+### Diagrama cajas
+
+```{r}
+boxplot(cars$speed)
+
+```
+
+Column {data-width=350}
+-----------------------------------------------------------------------
+
+### Histograma
+
+```{r}
+hist(cars$dist)
+```
+
+### Comparación
+
+```{r}
+plot(cars$speed,cars$dist)
+```
+
